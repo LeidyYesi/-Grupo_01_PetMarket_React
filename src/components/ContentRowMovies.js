@@ -4,8 +4,6 @@ import SmallCard from "./SmallCard";
 
 /* <!-- Movies in DB --> */
 
-
-
 /* <!-- Total awards --> */
 
 // let totalAwards = {
@@ -16,8 +14,6 @@ import SmallCard from "./SmallCard";
 // };
 
 /* <!-- Actors quantity --> */
-
-
 
 function ContentRowMovies() {
   const [users, setUsers] = useState([]);
@@ -47,7 +43,7 @@ function ContentRowMovies() {
     title: "Total Products",
     color: "primary",
     cuantity: products.length,
-    icon: "fa-solid fa-box-open"
+    icon: "fa-solid fa-box-open",
   };
 
   let totalUsers = {
@@ -57,16 +53,39 @@ function ContentRowMovies() {
     icon: "fa-user",
   };
 
-  // const categories = products.map((element) => {
-  //   return (element.category === undefined)
-    
-  // })
+  console.log(products);
+
+  /**
+   * getUniqueCategories - Función que obtiene las categorías únicas de un array de productos.
+   *
+   * @param {Array} products - Un array de objetos de productos, donde cada objeto tiene una propiedad 'category'.
+   * @returns {Array} Un array que contiene todas las categorías únicas del array de productos proporcionado.
+   */
+  const getUniqueCategories = (products) => {
+    // Crea un nuevo Set, que almacenará las categorías únicas.
+    const uniqueCategoriesSet = new Set();
+
+    // Recorre cada producto en el array de productos.
+    products.forEach((product) => {
+      // Agrega la propiedad 'category' del producto actual al Set.
+      // Los Sets solo almacenan valores únicos, por lo que no se agregarán categorías duplicadas.
+      uniqueCategoriesSet.add(product.category);
+    });
+
+    // Convierte el Set de categorías únicas a un array y devuelve el resultado.
+    return Array.from(uniqueCategoriesSet);
+  };
+
+  // Llama a la función getUniqueCategories con el array de productos y almacena el resultado en la variable uniqueCategories.
+  const uniqueCategories = getUniqueCategories(products);
+
+  console.log(uniqueCategories);
 
   let totalCategories = {
     title: "Total Categories",
     color: "warning",
-    cuantity: "2",
-    icon: "fa-user-check",
+    cuantity: uniqueCategories.length,
+    icon: "fa-solid fa-list",
   };
   let cartProps = [totalProducts, totalUsers, totalCategories];
 
