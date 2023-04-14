@@ -4,12 +4,7 @@ import SmallCard from "./SmallCard";
 
 /* <!-- Movies in DB --> */
 
-let moviesInDB = {
-  title: "Movies in Data Base",
-  color: "primary",
-  cuantity: 21,
-  icon: "fa-clipboard-list",
-};
+
 
 /* <!-- Total awards --> */
 
@@ -22,15 +17,11 @@ let moviesInDB = {
 
 /* <!-- Actors quantity --> */
 
-let actorsQuantity = {
-  title: "Actors quantity",
-  color: "warning",
-  cuantity: "49",
-  icon: "fa-user-check",
-};
+
 
 function ContentRowMovies() {
   const [users, setUsers] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3030/api/users")
@@ -41,7 +32,23 @@ function ContentRowMovies() {
       .catch((error) => {
         console.log(error);
       });
+
+    fetch("http://localhost:3030/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
+
+  let totalProducts = {
+    title: "Total Products",
+    color: "primary",
+    cuantity: products.length,
+    icon: "fa-solid fa-box-open"
+  };
 
   let totalUsers = {
     title: " Total users",
@@ -50,7 +57,18 @@ function ContentRowMovies() {
     icon: "fa-user",
   };
 
-  let cartProps = [moviesInDB, totalUsers, actorsQuantity];
+  // const categories = products.map((element) => {
+  //   return (element.category === undefined)
+    
+  // })
+
+  let totalCategories = {
+    title: "Total Categories",
+    color: "warning",
+    cuantity: "2",
+    icon: "fa-user-check",
+  };
+  let cartProps = [totalProducts, totalUsers, totalCategories];
 
   return (
     <div className="row">
