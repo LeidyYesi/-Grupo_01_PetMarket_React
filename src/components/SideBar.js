@@ -41,7 +41,7 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/GenresInDb">
                         <i className="fas fa-fw fa-folder text-warning"></i>
-                        <span className="text-dark">Pages</span>
+                        <span className="text-dark">Categorias</span>
                     </Link>
                 </li>
 
@@ -49,7 +49,7 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/LastMovieInDb">
                         <i className="fas fa-fw fa-chart-area text-warning"></i>
-                        <span className="text-dark">Charts</span>
+                        <span className="text-dark">Ultimo usuario registrado</span>
                     </Link>
                 </li>
 
@@ -57,7 +57,7 @@ function SideBar(){
                 <li className="nav-item nav-link">
                     <Link className="nav-link" to="/ContentRowMovies">
                         <i className="fas fa-fw fa-table text-warning"></i>
-                        <span className="text-dark">Tables</span>
+                        <span className="text-dark">Total de productos y Usuarios</span>
                     </Link>
                 </li>
 
