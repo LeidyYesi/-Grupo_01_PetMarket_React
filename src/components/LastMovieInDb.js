@@ -15,6 +15,7 @@ function LastMovieInDb() {
   }, []);
 
   const ultimoUsuario = users[users.length - 1];
+  const localhost = "http://localhost:3030"
 
   if (ultimoUsuario === undefined) {
     return <h1>Cargando pagina...</h1>;
@@ -30,7 +31,15 @@ function LastMovieInDb() {
         </div>
         <div className="card-body">
           <div className="text-center">
-            <h3>{ultimoUsuario.name} {ultimoUsuario.lastname}</h3>
+            <h3>
+              {ultimoUsuario.name} {ultimoUsuario.lastname}
+            </h3>
+            <img
+              className="img-fluid px-3 px-sm-4 mt-3 mb-4"
+              style={{ width: 40 + "rem" }}
+              src= {localhost + ultimoUsuario.img}
+              alt=" Foto de perfil "
+            />
           </div>
         </div>
       </div>
