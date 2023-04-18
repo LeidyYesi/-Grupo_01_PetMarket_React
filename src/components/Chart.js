@@ -29,15 +29,15 @@ function Chart() {
     /* <!-- DataTales Example --> */
     <div className="card shadow mb-4">
       {
-        <div className="card-body">
-          <div className="table-responsive">
+        <div className="card-body border border-info">
+          <div className="table-responsive ">
             <table
-              className="table table-bordered"
+              className="table table-bordered border-primary " 
               id="dataTable"
               width="100%"
               cellSpacing="0"
             >
-              <thead>
+              <thead class="table-info">
                 <tr>
                   <th>Producto</th>
                   <th>Descripción</th>
@@ -45,7 +45,7 @@ function Chart() {
                   <th>Descuento</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="table-info">
                 {table.map((row, i) => {
                   return <ChartRow {...row} key={i} />;
                 })}
