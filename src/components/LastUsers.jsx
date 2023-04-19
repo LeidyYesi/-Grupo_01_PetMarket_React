@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function LastMovieInDb() {
+function LastUsers() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -47,4 +47,4 @@ function LastMovieInDb() {
   );
 }
 
-export default LastMovieInDb;
+export default LastUsers;

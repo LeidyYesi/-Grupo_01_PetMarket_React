@@ -1,7 +1,7 @@
 import React from "react";
 import Category from "./Category";
 
-function GenresInDb() {
+function Categories() {
   let CategotyData = [
     {
       category: "Accesorios",
@@ -38,7 +38,7 @@ function GenresInDb() {
                 </div>
               </div>
             </div>
-          </div>
+          
           <div className="col-lg-6 mb-4">
             <div className="card bg-sarasa text-white shadow">
               <div className="card-body">
@@ -62,11 +62,11 @@ function GenresInDb() {
                 </div>
             </div>
           </div>
-          
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default GenresInDb;
+export default Categories;

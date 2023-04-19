@@ -1,9 +1,9 @@
 import React from 'react';
 import image from '../assets/images/Logo-pet-market.jpg';
 import ContentWrapper from './ContentWrapper';
-import GenresInDb from './GenresInDb';
-import LastMovieInDb from './LastMovieInDb';
-import ContentRowMovies from './ContentRowMovies';
+import Categories from './Categories';
+import LastUsers from './LastUsers';
+import ContentTotales from './ContentTotales';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
 
@@ -70,13 +70,13 @@ function SideBar(){
                     <ContentWrapper />
                 </Route>
                 <Route path="/GenresInDb">
-                    <GenresInDb />
+                    <Categories />
                 </Route>
                 <Route path="/LastMovieInDb">
-                    <LastMovieInDb />
+                    <LastUsers />
                 </Route>
                 <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                    <ContentTotales />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

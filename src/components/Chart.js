@@ -26,26 +26,26 @@ function Chart() {
   });
 
   return (
-    /* <!-- DataTales Example --> */
+    
     <div className="card shadow mb-4">
       {
-        <div className="card-body border border-info">
+        <div className="card-body">
           <div className="table-responsive ">
             <table
-              className="table table-bordered border-primary " 
+              className="table table-bordered" 
               id="dataTable"
               width="100%"
               cellSpacing="0"
             >
-              <thead class="table-info">
-                <tr>
+              <thead className="table-info">
+                <tr className="text-dark">
                   <th>Producto</th>
                   <th>Descripción</th>
                   <th>Precio</th>
                   <th>Descuento</th>
                 </tr>
               </thead>
-              <tbody class="table-info">
+              <tbody class="table-info text-dark">
                 {table.map((row, i) => {
                   return <ChartRow {...row} key={i} />;
                 })}

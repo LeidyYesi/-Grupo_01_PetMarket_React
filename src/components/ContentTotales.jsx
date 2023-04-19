@@ -15,7 +15,7 @@ import SmallCard from "./SmallCard";
 
 /* <!-- Actors quantity --> */
 
-function ContentRowMovies() {
+function ContentTotales() {
   const [users, setUsers] = useState([]);
   const [products, setProducts] = useState([]);
 
@@ -98,4 +98,4 @@ function ContentRowMovies() {
   );
 }
 
-export default ContentRowMovies;
+export default ContentTotales;
