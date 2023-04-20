@@ -4,32 +4,39 @@ import Category from "./Category";
 function Categories() {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:3030/api/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  const countCategories = (products) => {
-    const categoriesCount = {};
-
-    products.forEach((product) => {
-      if (!categoriesCount.hasOwnProperty(product.category)) {
-        categoriesCount[product.category] = 1;
-      } else {
-        categoriesCount[product.category]++;
-      }
+  // useEffect() es un Hook de efecto en React que se ejecuta después del renderizado del componente.
+useEffect(() => {
+  // Realiza una llamada fetch() a la API en la dirección "http://localhost:3030/api/products".
+  fetch("http://localhost:3030/api/products")
+    .then((response) => response.json()) // Convierte la respuesta en un objeto JSON.
+    .then((data) => {
+      setProducts(data.data); // Actualiza el estado del componente con el array de productos.
+    })
+    .catch((error) => {
+      console.log(error); // Registra cualquier error en la consola.
     });
+}, []); // El array de dependencias está vacío, por lo que useEffect se ejecutará solo una vez, cuando el componente se monte.
 
-    return categoriesCount;
-  };
+// countCategories() es una función que acepta un array de productos y devuelve un objeto con la cantidad de productos por categoría.
+const countCategories = (products) => {
+  const categoriesCount = {}; // Inicializa un objeto vacío para almacenar las categorías y sus respectivos conteos.
 
-  const categoriesCount = countCategories(products);
+  // Itera sobre el array de productos.
+  products.forEach((product) => {
+    // Si la categoría del producto no existe en categoriesCount, crea una nueva entrada y asigna su valor inicial en 1.
+    if (!categoriesCount.hasOwnProperty(product.category)) {
+      categoriesCount[product.category] = 1;
+    } else {
+      // Si la categoría ya existe en categoriesCount, incrementa su valor en 1.
+      categoriesCount[product.category]++;
+    }
+  });
+
+  return categoriesCount; // Devuelve el objeto categoriesCount con la cantidad de productos por categoría.
+};
+
+// Llama a la función countCategories() con el array de productos y almacena el resultado en la constante categoriesCount.
+const categoriesCount = countCategories(products);
 
   return (
     <div className="col-lg-6 mb-4">

@@ -56,10 +56,7 @@ function ContentTotales() {
   console.log(products);
 
   /**
-   * getUniqueCategories - Función que obtiene las categorías únicas de un array de productos.
-   *
-   * @param {Array} products - Un array de objetos de productos, donde cada objeto tiene una propiedad 'category'.
-   * @returns {Array} Un array que contiene todas las categorías únicas del array de productos proporcionado.
+   * getUniqueCategories - Función que obtiene las categorías únicas de un array de productos.  
    */
   const getUniqueCategories = (products) => {
     // Crea un nuevo Set, que almacenará las categorías únicas.
