@@ -10011,3 +10011,7 @@ body.sidebar-toggled footer.sticky-footer {
   display: flex;
   justify-content: space-between;
 }
+
+a:link{
+  text-decoration: none;
+}
