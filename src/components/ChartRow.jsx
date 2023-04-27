@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function ChartRow(props){
     return (
                 <tr>
@@ -11,14 +10,5 @@ function ChartRow(props){
                 </tr>
             )
     }
-    
-        
 
 export default ChartRow;
-
-
-/*<ul>
- {props.discount.map( (discount,i) => 
- <li key={`discount ${i}`}>{discount}</li>
-)}
-</ul>*/

@@ -10016,3 +10016,28 @@ body.sidebar-toggled footer.sticky-footer {
 a:link{
   text-decoration: none;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0 10px;
+}
+
+.pagination button[disabled] {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 1.5rem;
+  margin: 0 10px;
+}
